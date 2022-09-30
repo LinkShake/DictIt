@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { SearchField } from "./controllers/SearchField";
+import { Results } from "./controllers/Results";
+import "./style/ExtensionContainer.css";
+import "./style/Results.css";
+import "./style/SearchField.css";
+import "./style/Title.css";
 
-function App() {
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": `${process.env.API_KEY}`,
+    "X-RapidAPI-Host": `${process.env.API_HOST}`,
+  },
+};
+
+const App: React.FC = () => {
+  const [data, setData] = useState<object>({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="extension-container">
+      <div className="extension-title--container">
+        <h1 className="extension-title">DictIt</h1>
+        <p id="copyright">made by LinkShake</p>
+      </div>
+      <SearchField data={data} setData={setData} />
+      <Results data={data} setData={setData} />
     </div>
   );
-}
+};
 
 export default App;
