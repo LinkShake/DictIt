@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# DictIt Chrome Extension
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What's the project about
 
-## Available Scripts
+DictIt is a tiny chrome extension for searching words: find their meaning and synonyms (still in development) thanks to the [`WordsAPI`](https://wordsapi.com) (important note: for the time being the extension in built with the [`freedictionaryAPI`](https://dictionaryapi.dev) but I'll update it).
 
-In the project directory, you can run:
+## How to build and run the extension
 
-### `npm start`
+In order to use the extension you first need to install the dependencies with
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install | yarn install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+and to build it with
 
-### `npm test`
+```
+npm run build | yarn build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then you need to go to [`chrome://extensions`](chrome://extensions), enable the developer mode (in the top-right corner)
 
-### `npm run build`
+![developerMode](./md/images/enableDeveloperMode.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+and select "Load unpacked" (in the top-left corner)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![loadUnpacked](./md/images/loadUnpacked.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now you should see the extension like this
 
-### `npm run eject`
+![extensionScreen](./md/images/extensionScreen.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+And so you're ready to go!
